@@ -25,6 +25,19 @@
 It is meant as an aid for point-cloud based reconstruction of heritage or renovation projects, within a Linked Data context."""@en .
 
 
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/dot#ClassifiedDamage
+dot:ClassifiedDamage rdf:type owl:Class ;
+			  rdfs:subClassOf dot:Damage ;
+			  owl:disjointWith dot:UnclassifiedDamage ;
+              rdfs:comment """A damage classification is used to denote the kind of damage. Subclasses of this class are defined in extensions 
+			  such as CDO (Concrete Damage Ontology), NSO (the Natural Stone Ontology), etc."""@en ;
+			  rdfs:isDefinedBy dot: ;
+              rdfs:label "Classified Damage"@en .
+
 
 #################################################################
 #    Object Properties
@@ -41,31 +54,3 @@ dot:adjacentDamageElement rdf:type owl:ObjectProperty ,
                                         "tilstødende Skadeselement"@da ;
 						              rdfs:isDefinedBy dot: .
 
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  https://w3id.org/dot#filePath
-dot:filePath rdf:type owl:DatatypeProperty ;
-             rdfs:domain dot:ExternalResource ;
-             rdfs:range xsd:anyURI ;
-             rdfs:comment "Defines the unique location in a file system of an ExternalResource."@en ,
-                          "Definerer en ekstern resources unikke sti i et filsystem."@da ;
-             rdfs:label "file path"@en ,
-                        "filsti"@da ;
-             rdfs:isDefinedBy dot: .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  https://w3id.org/dot#ClassifiedDamage
-dot:ClassifiedDamage rdf:type owl:Class ;
-			  rdfs:subClassOf dot:Damage ;
-			  owl:disjointWith dot:UnclassifiedDamage ;
-              rdfs:comment """A damage classification is used to denote the kind of damage. Subclasses of this class are defined in extensions 
-			  such as CDO (Concrete Damage Ontology), NSO (the Natural Stone Ontology), etc."""@en ;
-			  rdfs:isDefinedBy dot: ;
-              rdfs:label "Classified Damage"@en .
