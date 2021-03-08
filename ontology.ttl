@@ -11,11 +11,6 @@
 @prefix schema: <http://schema.org/#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
-<https://w3id.org/dot#> rdf:type owl:Ontology , voaf:Vocabulary ;
-	dcterms:creator [
-      rdf:type foaf:Person ;
-      foaf:name "Wannes Cools" ;
-    ] ;
 
 #################################################################
 #    Object Properties
