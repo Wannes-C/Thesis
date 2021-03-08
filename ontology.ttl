@@ -33,8 +33,8 @@ It is meant as an aid for point-cloud based reconstruction of heritage or renova
 dot:ClassifiedDamage rdf:type owl:Class ;
 			  rdfs:subClassOf dot:Damage ;
 			  owl:disjointWith dot:UnclassifiedDamage ;
-              rdfs:comment """A damage classification is used to denote the kind of damage. Subclasses of this class are defined in extensions 
-			  such as CDO (Concrete Damage Ontology), NSO (the Natural Stone Ontology), etc."""@en ;
+              rdfs:comment "A damage classification is used to denote the kind of damage. Subclasses of this class are defined in extensions 
+			  such as CDO (Concrete Damage Ontology), NSO (the Natural Stone Ontology), etc."@en ;
 			  rdfs:isDefinedBy dot: ;
               rdfs:label "Classified Damage"@en .
 
