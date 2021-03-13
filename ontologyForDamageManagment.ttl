@@ -54,7 +54,7 @@ opm:DamagedState	rdf:type owl:Class ;
 opm:UndamagedState	rdf:type owl:Class ;
         		rdfs:subClassOf opm:DamageState ;
         		rdfs:label      "Undamaged State"@en;
-        		rdfs:comment    "A damage state for where all previously occuring damages are resolved, containing no more damages"@en .
+        		rdfs:comment    "A damage state for when all previously occuring damages are resolved, containing no more damages"@en .
 
 
 #################################################################
