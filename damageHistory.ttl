@@ -7,6 +7,8 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema: <http://schema.org/#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix opm: <https://w3id.org/opm#> .
+@prefix seas:   <http://w3id.org/seas/> .
 
 
 
@@ -25,42 +27,19 @@
 #    Classes
 #################################################################
 
-odm:DamageState		rdf:type owl:Class ;
-			rdfs:label    "Damage State"@en ;
-			rdfs:comment "A damage state holds all object's occuring damages at a certain moment in time. Additional information considering these damages
-				should be connected to the damages themselves. A state can furthermore hold information about properties which are altered due to these
-				damages. For enabling efficient damage managment, it is advised for at least providing minimal metadata regarding its time of generation
-				by means of prov:generatedAtTime"@en .
-
-opm:CurrentDamageState	rdf:type owl:Class ;
-        		rdfs:subClassOf opm:DamageState ;
-        		rdfs:label      "Current Damage State"@en ;
-       			rdfs:comment    "The damage state that was most recently defined. It is currently assumed to be true until actions are taken for resolving 
-					damages, new damages are noticed or additional damage information is obtained. In these occasions either this state is updated 
-					(remaining the current state) or a new damage state is made, becoming the current state."@en .
-
-opm:OutdatedDamageState	rdf:type owl:Class ;
-        		rdfs:subClassOf opm:DamageState ;
-        		rdfs:label      "Outdated Damage State"@en;
-        		rdfs:comment    "A damage state that was true at a certain moment in the past."@en .
-
-opm:DamagedState	rdf:type owl:Class ;
-        		rdfs:subClassOf opm:DamageState ;
-        		rdfs:label      "Damaged State"@en;
-        		rdfs:comment    "A damage state for which the object contains one or more damages."@en .
-
-opm:UndamagedState	rdf:type owl:Class ;
-        		rdfs:subClassOf opm:DamageState ;
-        		rdfs:label      "Undamaged State"@en;
-        		rdfs:comment    "A damage state for where all previously occuring damages are resolved, containing no more damages"@en .
+dhis:DamageHistory	rdf:type owl:Class ;
+        		rdfs:subClassOf opm:Property, seas:Property ;
+			rdfs:label    "Damage History"@en ;
+			rdfs:comment "A damage history is an object's property which holds its history of damages. It is strongly advised to use this
+					class as an element's property for connecting opm:hasPropertyState. The damage history can then contain several instances 
+					of opm:PropertyState, each containing its occuring damages at a certain moment in time."@en .
 
 
 #################################################################
 #    Object Properties
 #################################################################
 
-odm:hasDamageState	rdf:type owl:ObjectProperty ;
-			rdfs:subPropertyOf      seas:evaluation ;
-			rdfs:label    "has Damage State"@en ;
-                        rdfs:comment  "Defines the relationship between an object and its damage state."@en ;
-                        rdfs:range odm:DamageState .
+dhis:hasDamageHistory	rdf:type owl:ObjectProperty ;
+			rdfs:label    "has Damage History"@en ;
+                        rdfs:comment  "Defines the relationship between an object and its property 'damage history'."@en ;
+                        rdfs:range dhis:DamageHistory .
