@@ -3,13 +3,13 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix brot: <https://wisib.de/ontologie/brot#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix schema: <http://schema.org/#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix seas:   <http://w3id.org/seas/> .
 
 
 #################################
@@ -29,28 +29,23 @@ It is meant as an aid for point-cloud based reconstruction of heritage or renova
 #    Classes
 #################################################################
 
-###  https://w3id.org/dot#ClassifiedDamage
-dot:ClassifiedDamage rdf:type owl:Class ;
-			  rdfs:subClassOf dot:Damage ;
-			  owl:disjointWith dot:UnclassifiedDamage ;
-              rdfs:comment "A damage classification is used to denote the kind of damage. Subclasses of this class are defined in extensions 
-			  such as CDO (Concrete Damage Ontology), NSO (the Natural Stone Ontology), etc."@en ;
-			  rdfs:isDefinedBy dot: ;
-              rdfs:label "Classified Damage"@en .
+odm:DamageState		rdf:type owl:Class ;
+			rdfs:label    "Damage State"@en ;
+			rdfs:comment "A damage state holds all object's occuring damages at a certain moment in time. Additional information considering these damages
+				should be connected to the damages themselves. A state can furthermore hold information about properties which are altered due to these
+				damages. For enabling efficient damage managment, it is advised to at least provide minimal metadata regarding its time of generation
+				by means of prov:generatedAtTime"@en .
+
+
 
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  https://w3id.org/dot#adjacentDamageElement
-dot:adjacentDamageElement rdf:type owl:ObjectProperty ,
-                                   owl:SymmetricProperty ;
-                          rdfs:domain dot:DamageElement ;
-                          rdfs:range dot:DamageElement ;
-                          rdfs:comment  "Defines the relationship between two instances of DamageElement that are physically connected with each other."@en ,
-                                        "Definerer relationen mellem to Skadeselementer som er fysisk forbundet til hinanden."@da ;
-                          rdfs:label    "adjacent DamageElement"@en ,
-                                        "tilstødende Skadeselement"@da ;
-						              rdfs:isDefinedBy dot: .
+odm:hasDamageState	rdf:type owl:ObjectProperty ;
+			rdfs:subPropertyOf      seas:evaluation ;
+			rdfs:label    "has Damage State"@en ;
+                        rdfs:comment  "Defines the relationship between an object and its damage state."@en ;
+                        rdfs:range odm:DamageState .
 
