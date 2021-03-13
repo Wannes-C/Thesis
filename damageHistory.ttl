@@ -30,9 +30,9 @@
 dhis:DamageHistory	rdf:type owl:Class ;
         		rdfs:subClassOf opm:Property, seas:Property ;
 			rdfs:label    "Damage History"@en ;
-			rdfs:comment "A damage history is an object's property which holds its history of damages. It is strongly advised to use this
+			rdfs:comment """A damage history is an object's property which holds its history of damages. It is strongly advised to use this
 					class as an element's property for connecting opm:hasPropertyState. The damage history can then contain several instances 
-					of opm:PropertyState, each containing its occuring damages at a certain moment in time."@en .
+					of opm:PropertyState, each containing its occuring damages at a certain moment in time."""@en .
 
 
 #################################################################
