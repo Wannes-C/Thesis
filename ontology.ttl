@@ -17,12 +17,10 @@
 #################################
 
 <https://github.com/Wannes-C/Thesis/blob/main/ontology.ttl> rdf:type owl:Ontology ;
-    dce:modified "May 3rd 2018"^^xsd:string ;
-    owl:versionInfo "May 3rd 2018"^^xsd:string ;
-    dcterms:issued "June 1st 2018"^^xsd:date ;
-    dcterms:title "STG: Scan-to-Graph"@en ;
-    dcterms:description """Scan-to-Graph (STG) is a simple vocabulary defining some concepts for linking instances with their geometry serialized in a certain format.
-It is meant as an aid for point-cloud based reconstruction of heritage or renovation projects, within a Linked Data context."""@en .
+    dce:modified "March 13th 2021"^^xsd:string ;
+    owl:versionInfo "March 13th 2021"^^xsd:string ;
+    dcterms:title "ODM: Ontology for Damage Management"@en ;
+    #dcterms:description """  """@en .
 
 
 #################################################################
@@ -33,9 +31,20 @@ odm:DamageState		rdf:type owl:Class ;
 			rdfs:label    "Damage State"@en ;
 			rdfs:comment "A damage state holds all object's occuring damages at a certain moment in time. Additional information considering these damages
 				should be connected to the damages themselves. A state can furthermore hold information about properties which are altered due to these
-				damages. For enabling efficient damage managment, it is advised to at least provide minimal metadata regarding its time of generation
+				damages. For enabling efficient damage managment, it is advised for at least providing minimal metadata regarding its time of generation
 				by means of prov:generatedAtTime"@en .
 
+opm:CurrentDamageState	rdf:type owl:Class ;
+        		rdfs:subClassOf opm:DamageState ;
+        		rdfs:label      "Current Damage State"@en ;
+       			rdfs:comment    "The damage state that was most recently defined. It is currently assumed to be true until actions are taken for resolving 
+					damages, new damages are noticed or additional damage information is obtained. In these occasions either this state is updated 
+					(remaining the current state) or a new damage state is made, becoming the current state."@en .
+
+opm:OutdatedDamageState	rdf:type owl:Class ;
+        		rdfs:subClassOf opm:DamageState ;
+        		rdfs:label      "Outdated Damage State"@en;,
+        		rdfs:comment    "A damage state that was true at a certain moment in the past."@en .
 
 
 
