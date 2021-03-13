@@ -16,7 +16,7 @@
 # METADATA
 #################################
 
-<https://github.com/Wannes-C/Thesis/blob/main/ontology.ttl> rdf:type owl:Ontology ;
+<https://github.com/Wannes-C/Thesis/blob/main/ontologyForDamageManagment.ttl> rdf:type owl:Ontology ;
     dce:modified "March 13th 2021"^^xsd:string ;
     owl:versionInfo "March 13th 2021"^^xsd:string ;
     dcterms:title "ODM: Ontology for Damage Management"@en ;
