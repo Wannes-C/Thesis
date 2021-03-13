@@ -29,17 +29,17 @@
 
 odm:DamageState		rdf:type owl:Class ;
 			rdfs:label    "Damage State"@en ;
-			rdfs:comment "A damage state holds all object's occuring damages at a certain moment in time. Additional information considering these damages
+			rdfs:comment """A damage state holds all object's occuring damages at a certain moment in time. Additional information considering these damages
 				should be connected to the damages themselves. A state can furthermore hold information about properties which are altered due to these
 				damages. For enabling efficient damage managment, it is advised for at least providing minimal metadata regarding its time of generation
-				by means of prov:generatedAtTime"@en .
+				by means of prov:generatedAtTime."""@en .
 
 opm:CurrentDamageState	rdf:type owl:Class ;
         		rdfs:subClassOf opm:DamageState ;
         		rdfs:label      "Current Damage State"@en ;
-       			rdfs:comment    "The damage state that was most recently defined. It is currently assumed to be true until actions are taken for resolving 
+       			rdfs:comment    """The damage state that was most recently defined. It is currently assumed to be true until actions are taken for resolving 
 					damages, new damages are noticed or additional damage information is obtained. In these occasions either this state is updated 
-					(remaining the current state) or a new damage state is made, becoming the current state."@en .
+					(remaining the current state) or a new damage state is made, becoming the current state."""@en .
 
 opm:OutdatedDamageState	rdf:type owl:Class ;
         		rdfs:subClassOf opm:DamageState ;
