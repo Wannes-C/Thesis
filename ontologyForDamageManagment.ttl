@@ -17,10 +17,10 @@
 #################################
 
 <https://github.com/Wannes-C/Thesis/blob/main/ontologyForDamageManagment.ttl> rdf:type owl:Ontology ;
-    dce:modified "March 13th 2021"^^xsd:string ;
-    owl:versionInfo "March 13th 2021"^^xsd:string ;
+    dce:modified "May 28th 2021"^^xsd:string ;
+    owl:versionInfo "May 28th 2021"^^xsd:string ;
     dcterms:title "ODM: Ontology for Damage Management"@en ;
-    #dcterms:description """  """@en .
+    #dcterms:description """This ontology allows for dynamically modelling damages in Linked data damage models. By means of states, occurring and resolved damages can be distinguished. It furthermore allows for organised modelling of previous damages based on when they were occurring."""@en .
 
 
 #################################################################
