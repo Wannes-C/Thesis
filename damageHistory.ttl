@@ -20,7 +20,7 @@
     dce:modified "March 13th 2021"^^xsd:string ;
     owl:versionInfo "March 13th 2021"^^xsd:string ;
     dcterms:title "Damage History class an object property"@en ;
-    #dcterms:description """  """@en .
+    #dcterms:description """This ontology allows for defining and using a building component property that holds its damage history."""@en .
 
 
 #################################################################
