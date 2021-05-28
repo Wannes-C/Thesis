@@ -16,7 +16,7 @@
 # METADATA
 #################################
 
-<https://github.com/Wannes-C/Thesis/blob/main/ontologyForDamageManagment.ttl> rdf:type owl:Ontology ;
+<https://github.com/Wannes-C/Thesis/blob/main/ontologyForDamageManagement.ttl> rdf:type owl:Ontology ;
     dce:modified "May 28th 2021"^^xsd:string ;
     owl:versionInfo "May 28th 2021"^^xsd:string ;
     dcterms:title "ODM: Ontology for Damage Management"@en ;
@@ -31,7 +31,7 @@ odm:DamageState		rdf:type owl:Class ;
 			rdfs:label    "Damage State"@en ;
 			rdfs:comment """A damage state holds all object's occurring damages at a certain moment in time. Additional information considering these damages
 				should be connected to the damages themselves. A state can furthermore hold information about properties which are altered due to these
-				damages. For enabling efficient damage managment, it is advised for at least providing minimal metadata regarding its time of generation
+				damages. For enabling efficient damage management, it is advised for at least providing minimal metadata regarding its time of generation
 				by means of prov:generatedAtTime."""@en .
 
 odm:CurrentDamageState	rdf:type owl:Class ;
