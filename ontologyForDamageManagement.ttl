@@ -35,24 +35,24 @@ odm:DamageState		rdf:type owl:Class ;
 				by means of prov:generatedAtTime."""@en .
 
 odm:CurrentDamageState	rdf:type owl:Class ;
-        		rdfs:subClassOf opm:DamageState ;
+        		rdfs:subClassOf odm:DamageState ;
         		rdfs:label      "Current Damage State"@en ;
        			rdfs:comment    """The damage state that was most recently defined. It is currently assumed to be true until actions are taken for resolving 
 					damages, new damages are noticed or additional damage information is obtained. In these occasions either this state is updated 
 					(remaining the current state) or a new damage state is made, becoming the current state."""@en .
 
 odm:OutdatedDamageState	rdf:type owl:Class ;
-        		rdfs:subClassOf opm:DamageState ;
+        		rdfs:subClassOf odm:DamageState ;
         		rdfs:label      "Outdated Damage State"@en;
         		rdfs:comment    "A damage state that was true at a certain moment in the past."@en .
 
 odm:DamagedState	rdf:type owl:Class ;
-        		rdfs:subClassOf opm:DamageState ;
+        		rdfs:subClassOf odm:DamageState ;
         		rdfs:label      "Damaged State"@en;
         		rdfs:comment    "A damage state for which the object contains one or more damages."@en .
 
 odm:UndamagedState	rdf:type owl:Class ;
-        		rdfs:subClassOf opm:DamageState ;
+        		rdfs:subClassOf odm:DamageState ;
         		rdfs:label      "Undamaged State"@en;
         		rdfs:comment    "A damage state for which all previously occurring damages are resolved, containing no more damages"@en .
 
